@@ -32,8 +32,6 @@
 \title{LDM-503-10: DAQ Validation Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
 \date{\vcsdate}
-\setDocUpstreamLocation{\url{https://github.com/lsst/lsst-texmf/examples}}
->>>>>>> 272aa9e... Added changelog and fixed date
 \author{ Michelle Butler }
 
 \input{history_and_info.tex}
@@ -287,8 +285,9 @@ Image on At-archiver~
 2 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-Have the at-archiver machine at the summit BBCP a copy of the file to
-the L1-handoff machine at the base and ingest the file to the butler~
+The forwarder at the BDC should be able to have communication with the
+DAQ that the image was taken, and be able to see the file.
+~\\[2\baselineskip]
 
 \medskip }
 \end{minipage}
@@ -297,7 +296,7 @@ the L1-handoff machine at the base and ingest the file to the butler~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-L1-handoff machine can see the file and ingest it into ButlerG3.~~
+Image available for the forwarder at the base.~~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -313,7 +312,8 @@ L1-handoff machine can see the file and ingest it into ButlerG3.~~
 3 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-Send message back through SAL that the file was ingested~
+Communication between the forwarder and the DAQ are in place with
+messages being exchanged.~ ~
 
 \medskip }
 \end{minipage}
@@ -322,8 +322,8 @@ Send message back through SAL that the file was ingested~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-This will make sure that the machines at the base can see and update SAL
-messages from the summit. ~\\[2\baselineskip]
+if messages can be exchanged, the communication has been established.
+~\\[3\baselineskip]
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
