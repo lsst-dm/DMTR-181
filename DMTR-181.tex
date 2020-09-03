@@ -52,16 +52,16 @@ an LSST milestone pertaining to the Data Management Subsystem.
 \subsection{Objectives}
 \label{sect:objectives}
 
- This milestone verify the DAQ network from the summit to the base
+ This milestone verifies the DAQ network from the summit to the base
 ensuring that systems at the base can receive communications from the
-DAQ.~~
+DAQ. ~
 
 
 
 \subsection{System Overview}
 \label{sect:systemoverview}
 
- This milestone will take simulated data from the DAQ at the Summit and
+ This milestone verifies simulated data from the DAQ at the Summit and
 use the DWDM network environment to place data on DM machines at Base
 Data Center (BDC), essentially extending the DAQ extended network to the
 BDC. The test machines at the BDC will be a L1 handoff environment and a
@@ -71,7 +71,8 @@ single forwarder\\[2\baselineskip]
 
 \citeds{LDM-294} Data Management Organization and Management\\
 \citeds{LDM-503} DM Test Plan\\
-\citeds{LDM-148} Data Management System Design
+\citeds{LDM-148} Data Management System Design\\
+\citeds{LDM-639} Data Management Acceptance Test Specification
 
 
 \subsection{Document Overview}
@@ -118,7 +119,7 @@ and BDC 10GigE networks. ~
 
   \subsection{Entry Criteria}
   DAQ at the summit and test machines at BDC all have been installed and
-in working order with all networks configured.~~
+are in working order with all networks configured.~~
 
   \subsection{Exit Criteria}
   Files and other communications can take place from the summit machines
@@ -206,17 +207,18 @@ Michelle Butler }
 \label{sect:overallassessment}
 
 The milestone passed well, but the DWDM network will no longer be used
-for comcam or MTcam. ~ There is no need to separate the forwarders and
-archiver systems from the DAQ at a long distance.~ ~
+for ComCam or Main Telescope Camera (MTCam)~ ~There is no need to
+separate the forwarders and archiver systems from the DAQ at a long
+distance. ~~
 
 \subsection{Recommended Improvements}
 \label{sect:recommendations}
 
-No improvements other than the MTcam will not use the archiver system,
-and the image will be taken directly from the DAQ. ~ In the future the
-DAQ needs to now build fits files, so there is no reason to have the
-archiver fits files AND DAQ fits files. ~ We will in the future cut out
-the archiver function's of build of the fits files. ~\\
+No improvements other than the Main Telescope Camera will not use the
+archiver system, and the image will be taken directly from the DAQ. ~ In
+the future the DAQ needs to now build fits files, so there is no reason
+to have the archiver fits files AND DAQ fits files. ~ We will in the
+future cut out the archiver function's of build of the fits files. ~\\
 \hspace*{0.333em}
 
 \newpage
