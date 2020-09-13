@@ -1,6 +1,6 @@
 % generated from JIRA project LVV
-% using template at /usr/local/lib/python3.7/site-packages/docsteady/templates/dm-tpr.latex.jinja2.
-% using docsteady version 1.2rc23
+% using template at <template>.
+% using docsteady version 1.2rc23.post1+gcbf9dce.d20200913
 % Please do not edit -- update information in Jira instead
 
 \documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
@@ -191,10 +191,15 @@ Michelle Butler }
 \textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1550}{LVV-T1550}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+The ``machines'' are the archiver and the forwarder. ~ These systems are
+at the BDC which is where the comcam system was for this test. ~The DWDM
+network will not be used with this configuration due to re-design of
+comcam at the base and that the MTcam support systems will be at the
+summit with everything else. ~ ~Testing the DWDM is no longer necessary
+for DAQ effectiveness.~~
 \medskip
 \end{minipage}
 &   \\\hline
@@ -255,9 +260,14 @@ DWDM network.~
 \textbf{ Preconditions}:\\
 DAQ at the Summit and machines on networks at the base.~~
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\The ``machines'' are the archiver and the forwarder. ~ These systems are
+at the BDC which is where the comcam system was for this test. ~The DWDM
+network will not be used with this configuration due to re-design of
+comcam at the base and that the MTcam support systems will be at the
+summit with everything else. ~ ~Testing the DWDM is no longer necessary
+for DAQ effectiveness.~~
 
 
 Detailed steps results:
@@ -284,11 +294,12 @@ Image on At-archiver~
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+Images found on archiver in correct place. ~ Image is full 9 CCD.~~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 2 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -311,11 +322,15 @@ Image available for the forwarder at the base.~~
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+EFD and SAL messages all show that the archiver has the image, and
+forwarder communicated with archiver that the image was built and good.
+~ Header service produced good headers so a intact FITS file was
+produced.~~
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 3 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -338,11 +353,13 @@ if messages can be exchanged, the communication has been established.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+communication for images taken and ``grabbed'' from DAQ took place.
+~\\[4\baselineskip]
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 \end{longtable}
 
