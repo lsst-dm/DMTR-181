@@ -1,13 +1,25 @@
+% generated from JIRA project LVV
+% using template at /usr/local/lib/python3.7/site-packages/docsteady/templates/dm-tpr.latex.jinja2.
+% using docsteady version 1.2rc24
+% Please do not edit -- update information in Jira instead
+
 \documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
 \usepackage{geometry}
 \usepackage{longtable,booktabs}
 \usepackage{enumitem}
 \usepackage{arydshln}
+\usepackage{attachfile}
+\usepackage{array}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \input meta.tex
 
+\newcommand{\attachmentsUrl}{https://github.com/\gitorg/\lsstDocType-\lsstDocNum/blob/\gitref/attachments}
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setcounter{tocdepth}{4}
 
 \begin{document}
 
@@ -20,14 +32,15 @@
 \title{LDM-503-10: DAQ Validation Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
 \date{\vcsdate}
-\setDocUpstreamLocation{\url{https://github.com/lsst/lsst-texmf/examples}}
 \author{ Michelle Butler }
 
-\input history_and_info.tex
+\input{history_and_info.tex}
 
 
 \setDocAbstract{
-This is the test plan and report for LDM-503-10 (DAQ Validation), an LSST level 2 milestone pertaining to the Data Management Subsystem.
+This is the test plan and report for
+\textbf{ DAQ Validation} (LDM-503-10),
+an LSST milestone pertaining to the Data Management Subsystem.
 }
 
 
@@ -40,16 +53,16 @@ This is the test plan and report for LDM-503-10 (DAQ Validation), an LSST level 
 \subsection{Objectives}
 \label{sect:objectives}
 
-This milestone verify the DAQ network from the summit to the base
+ This milestone verifies the DAQ network from the summit to the base
 ensuring that systems at the base can receive communications from the
-DAQ.~~
+DAQ. ~
 
 
 
 \subsection{System Overview}
 \label{sect:systemoverview}
 
-This milestone will take simulated data from the DAQ at the Summit and
+ This milestone verifies simulated data from the DAQ at the Summit and
 use the DWDM network environment to place data on DM machines at Base
 Data Center (BDC), essentially extending the DAQ extended network to the
 BDC. The test machines at the BDC will be a L1 handoff environment and a
@@ -59,34 +72,41 @@ single forwarder\\[2\baselineskip]
 
 \citeds{LDM-294} Data Management Organization and Management\\
 \citeds{LDM-503} DM Test Plan\\
-\citeds{LDM-148} Data Management System Design
+\citeds{LDM-148} Data Management System Design\\
+\citeds{LDM-639} Data Management Acceptance Test Specification
 
 
 \subsection{Document Overview}
 \label{sect:docoverview}
 
-This document was generated from Jira, obtaining the relevant information from the 
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testPlan/LVV-P54}{LVV-P54}
+This document was generated from Jira, obtaining the relevant information from the
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P54}{LVV-P54}
 ~Jira Test Plan and related Test Cycles (
-  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C107}{LVV-C107}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C107}{LVV-C107}
 ).
 
-Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}), the applicable documentation, and explains how this document is organized.
-Section \ref{sect:configuration}  describes the configuration used for this test.
+Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}),
+the applicable documentation, and explains how this document is organized.
+Section \ref{sect:testplan} provides additional information about the test plan, like for example the configuration
+used for this test or related documentation.
 Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
-%Section \ref{sect:plannedtestactivities} provides the list of planned test cycles and test cases, including all relevant information that fully describes the test campaign.
 
-Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary}, an overall assessment statement and suggestions for possible improvements.
+Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary},
+an overall assessment statement and suggestions for possible improvements.
 Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
 
-The current status of test plan LVV-P54 in Jira is \textbf{ Approved }.
+The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P54}{LVV-P54} in Jira is \textbf{ Completed }.
 
 \subsection{References}
 \label{sect:references}
 \renewcommand{\refname}{}
-\bibliography{lsst,refs,books,refs_ads}
-\section{Test Configuration}
-\label{sect:configuration}
+\bibliography{lsst,refs,books,refs_ads,local}
+
+
+\newpage
+\section{Test Plan Details}
+\label{sect:testplan}
+
 
 \subsection{Data Collection}
 
@@ -98,215 +118,245 @@ The current status of test plan LVV-P54 in Jira is \textbf{ Approved }.
 (BDC) on networks extending the DAQ network from the summit to the base
 and BDC 10GigE networks. ~
 
-
   \subsection{Entry Criteria}
   DAQ at the summit and test machines at BDC all have been installed and
-in working order with all networks configured.~~
-
+are in working order with all networks configured.~~
 
   \subsection{Exit Criteria}
   Files and other communications can take place from the summit machines
 and the BDC systems for the DAQ network.~~
 
 
+\subsection{Related Documentation}
+
+
+No additional documentation provided.
+
+
+\subsection{PMCS Activity}
+
+Primavera milestones related to the test campaign:
+\begin{itemize}
+\item LDM-503-10
+\end{itemize}
+
 
 \newpage
 \section{Personnel}
 \label{sect:personnel}
 
-The following personnel are involved in this test activity:
+The personnel involved in the test campaign is shown in the following table.
 
-\begin{itemize}
-\item Test Plan (LVV-P54) owner: Michelle Butler
-\item Test Cycles:
-\begin{itemize}
-  \item LVV-C107 owner: 
-    Michelle Butler
-  \begin{itemize}
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1550}{LVV-T1550} tester: 
-  \end{itemize}
-\end{itemize}
-\item Additional Test Personnel involved:
-  \begin{itemize}
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1550}{LVV-T1550}: 
-  \end{itemize}
-\end{itemize}
+{\small
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{6cm}}
+\hline
+\multicolumn{2}{r}{T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P54}{LVV-P54} owner:} &
+\multicolumn{2}{l}{\textbf{ Michelle Butler } }\\\hline
+\multicolumn{2}{r}{T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C107}{LVV-C107} owner:} &
+\multicolumn{2}{l}{\textbf{
+Michelle Butler }
+} \\\hline
+\textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1550}{LVV-T1550}
+& {\small Michelle Butler } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\end{longtable}
+}
 
 \newpage
 
-\section{Overview of the Test Results}
+\section{Test Campaign Overview}
 \label{sect:overview}
 
 \subsection{Summary}
 \label{sect:summarytable}
 
-\begin{longtable}{p{0.12\textwidth}p{0.2\textwidth}p{0.56\textwidth}p{0.12\textwidth}}
+{\small
+\begin{longtable}{p{2cm}cp{2.3cm}p{8.6cm}p{2.3cm}}
 \toprule
-
-  \multicolumn{3}{c}{ Test Cycle {\bf LVV-C107: LDM-503-10 DAQ verification
- }} \\\hline
-
-  {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
-
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1550}{LVV-T1550}
-    & Not Executed &  &
-    \\\hline
-
-\caption{Test Results Summary}
+\multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P54}{LVV-P54}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-10: DAQ Validation }} & Completed \\\hline
+\multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C107}{LVV-C107}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-10 DAQ verification }} & Done \\\hline
+\textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1550}{LVV-T1550}
+&  1
+& Pass &
+\begin{minipage}[]{9cm}
+\smallskip
+The ``machines'' are the archiver and the forwarder. ~ These systems are
+at the BDC which is where the comcam system was for this test. ~The DWDM
+network will not be used with this configuration due to re-design of
+comcam at the base and that the MTcam support systems will be at the
+summit with everything else. ~ ~Testing the DWDM is no longer necessary
+for DAQ effectiveness.~~
+\medskip
+\end{minipage}
+&   \\\hline
+\caption{Test Campaign Summary}
 \label{table:summary}
 \end{longtable}
+}
 
 \subsection{Overall Assessment}
 \label{sect:overallassessment}
 
-Not yet available.
+The milestone passed well, but the DWDM network will no longer be used
+for ComCam or Main Telescope Camera (MTCam)~ ~There is no need to
+separate the forwarders and archiver systems from the DAQ at a long
+distance. ~~
 
 \subsection{Recommended Improvements}
 \label{sect:recommendations}
 
-Not yet available.
+No improvements other than the Main Telescope Camera will not use the
+archiver system, and the image will be taken directly from the DAQ. ~ In
+the future the DAQ needs to now build fits files, so there is no reason
+to have the archiver fits files AND DAQ fits files. ~ We will in the
+future cut out the archiver function's of build of the fits files. ~\\
+\hspace*{0.333em}
 
 \newpage
 \section{Detailed Test Results}
 \label{sect:detailedtestresults}
 
+\subsection{Test Cycle LVV-C107 }
 
-  \subsection{Test Cycle LVV-C107 }
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C107}{LDM-503-10 DAQ verification}} in Jira.
 
-Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C107}{LDM-503-10 DAQ verification
-}} in Jira.
+Test Cycle name: LDM-503-10 DAQ verification\\
+Status: Done
 
-  LDM-503-10 DAQ verification
-\\
-  Status: Not Executed
-
-  Verify that the BDC systems on the~ DAQ DWDM network can communicate
+Verify that the BDC systems on the~ DAQ DWDM network can communicate
 with the Summit DAQ system. ~\\[2\baselineskip]
 
+\subsubsection{Software Version/Baseline}
+Not provided.
 
-  \subsubsection{Software Version/Baseline}
-    Not provided.
+\subsubsection{Configuration}
+Not provided.
 
-  \subsubsection{Configuration}
-    Not provided.
+\subsubsection{Test Cases in LVV-C107 Test Cycle}
 
-  \subsubsection{Test Cases in LVV-C107 Test Cycle}
+\paragraph{ LVV-T1550 - LDM-503-10 DAQ Validation }\mbox{}\\
 
-
-    \paragraph{Test Case LVV-T1550 - LDM-503-10 DAQ Validation
- }\mbox{}\\
-
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1550}{\textit{ LVV-T1550 } }
 test case in Jira.
 
-    Verify that the DAQ can talk to test machines at the BDC through the
+Verify that the DAQ can talk to test machines at the BDC through the
 DWDM network.~
 
+\textbf{ Preconditions}:\\
+DAQ at the Summit and machines on networks at the base.~~
 
-    \textbf{ Preconditions}:\\
-    DAQ at the Summit and machines on networks at the base.~~
+Execution status: {\bf Pass }
 
-
-    Execution status: {\bf Not Executed }
-
-    Final comment:\\
-
-
-    Detailed step results:
-
-    \begin{longtable}{p{1cm}p{2cm}p{13cm}}
-    \hline
-    {Step} & \multicolumn{2}{c}{Description, Results and Status}\\ \hline
-      1 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      have DAQ produce image at the summit~
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+Final comment:\\The ``machines'' are the archiver and the forwarder. ~ These systems are
+at the BDC which is where the comcam system was for this test. ~The DWDM
+network will not be used with this configuration due to re-design of
+comcam at the base and that the MTcam support systems will be at the
+summit with everything else. ~ ~Testing the DWDM is no longer necessary
+for DAQ effectiveness.~~
 
 
-      & Expected Result &
+Detailed steps results:
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Image on At-archiver~
+\begin{longtable}{p{1cm}p{15cm}}
+\hline
+{Step} & Step Details\\ \hline
+1 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+have DAQ produce image at the summit~
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Status          & Not Executed \\ \hline
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+Image on At-archiver~
 
-      2 & Description &
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Have the at-archiver machine at the summit BBCP a copy of the file to
-the L1-handoff machine at the base and ingest the file to the butler~
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+Images found on archiver in correct place. ~ Image is full 9 CCD.~~
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Pass } \\ \hline
 
-      & Expected Result &
+2 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+The forwarder at the BDC should be able to have communication with the
+DAQ that the image was taken, and be able to see the file.
+~\\[2\baselineskip]
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      L1-handoff machine can see the file and ingest it into ButlerG3.~~
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Status          & Not Executed \\ \hline
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+Image available for the forwarder at the base.~~
 
-      3 & Description &
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Send message back through SAL that the file was ingested~
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+EFD and SAL messages all show that the archiver has the image, and
+forwarder communicated with archiver that the image was built and good.
+~ Header service produced good headers so a intact FITS file was
+produced.~~
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Pass } \\ \hline
 
-      & Expected Result &
+3 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Communication between the forwarder and the DAQ are in place with
+messages being exchanged.~ ~
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      This will make sure that the machines at the base can see and update SAL
-messages from the summit. ~\\[2\baselineskip]
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Status          & Not Executed \\ \hline
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+if messages can be exchanged, the communication has been established.
+~\\[3\baselineskip]
 
-    \end{longtable}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+communication for images taken and ``grabbed'' from DAQ took place.
+~\\[4\baselineskip]
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+
+ & Status: \textbf{ Pass } \\ \hline
+
+\end{longtable}
 
 
 \input{appendix.tex}
